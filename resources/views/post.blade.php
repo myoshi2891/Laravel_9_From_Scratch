@@ -1,3 +1,4 @@
+@props(['post'])
 <x-layout>
     <article>
         <h1>{{ $post->title }}</h1>
