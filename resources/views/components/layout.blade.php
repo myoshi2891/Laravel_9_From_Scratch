@@ -10,6 +10,10 @@
     <link href="https://fonts.googleapis.com/css2?family=Open+Sans:wght@400;600;700&display=swap" rel="stylesheet" />
     <script src="https://cdn.jsdelivr.net/gh/alpinejs/alpine@v2.x.x/dist/alpine.min.js" defer></script>
     <style>
+        html {
+            scroll-behavior: smooth;
+        }
+
         .clamp {
             display: -webkit-box;
             -webkit-box-orient: vertical;
@@ -43,7 +47,7 @@
                     <a href="/login" class="ml-6 test-xs font-bold uppercase">Log In</a>
                 @endauth
 
-                <a href="#"
+                <a href="#newsletter"
                     class="bg-blue-500 ml-3 rounded-full text-xs font-semibold text-white uppercase px-5 py-3">Subscribe
                     for Update</a>
             </div>
@@ -51,7 +55,8 @@
 
         {{ $slot }}
 
-        <footer class="bg-gray-100 border border-black border-opacity-5 rounded-xl text-center py-16 px-10 mt-16">
+        <footer id="newsletter"
+            class="bg-gray-100 border border-black border-opacity-5 rounded-xl text-center py-16 px-10 mt-16">
             <img src="/images/lary-newsletter-icon.svg" alt="" class="mx-auto" />
             <h5 class="text-3xl">Stay in touch with the latest posts</h5>
             <p class="text-sm">Promise to keep the inbox clean. No bugs.</p>

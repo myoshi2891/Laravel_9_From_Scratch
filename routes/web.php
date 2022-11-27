@@ -1,10 +1,27 @@
 <?php
 
+use MailchimpMarketing\ApiClient;
 use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\PostController;
 use App\Http\Controllers\RegisterController;
 use App\Http\Controllers\SessionsController;
 use App\Http\Controllers\PostCommentsController;
+
+Route::get('ping', function () {
+    $mailchimp = new ApiClient();
+
+    $mailchimp->setConfig([
+        'apiKey' => config('services.mailchimp.key'),
+        'server' => 'us10'
+    ]);
+
+    $response = $mailchimp->lists->addListMember('e24e5270c0', [
+        'email_address' => 'myoshizumi+1@berklee.alumni.edu',
+        'status' => 'subscribed'
+    ]);
+
+    ddd($response);
+});
 
 Route::get('/', [PostController::class, 'index'])->name('home');
 
