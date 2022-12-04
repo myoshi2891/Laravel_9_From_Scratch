@@ -4,7 +4,7 @@
         <main class="max-w-6xl mx-auto mt-6 lg:mt-20 space-y-6">
             <article class="max-w-4xl mx-auto lg:grid lg:grid-cols-12 gap-x-10 pt-10">
                 <div class="col-span-4 text-center">
-                    <img src="/images/illustration-1.png" alt="" class="rounded" />
+                    <img src="{{ asset('storage/' . $post->thumbnail) }}" alt="" class="rounded" />
                     <p class="mt-4 block text-gray-300 text-xs">
                         Published
                         <time>{{ $post->created_at->diffForHumans() }}</time>
